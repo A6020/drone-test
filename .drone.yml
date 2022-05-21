@@ -1,0 +1,14 @@
+clone:
+  depth: 1
+kind: pipeline
+name : Test
+steps:
+ - name: MSMNILE
+   image: ghcr.io/projectvelvet/docker-test:fedora
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+   commands:
+      - ls
